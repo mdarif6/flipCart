@@ -1,0 +1,6 @@
+.flipcart-product-page {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background-color: var(--color-grey-light);
+}

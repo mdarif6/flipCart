@@ -1,0 +1,11 @@
+.flipcart-product-img {
+  width: 247px;
+  height: 288px;
+}
+.flipcart-product-bottom {
+  padding: 0 1rem;
+  line-height: 0.5rem;
+}
+.flipcart-product-name {
+  font-weight: bold;
+}

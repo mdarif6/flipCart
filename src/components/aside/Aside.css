@@ -1,0 +1,48 @@
+.flipcart-aside-filter {
+  min-width: 250px;
+  background-color: var(--color-white);
+}
+.flipcart-filter-heading {
+  display: flex;
+  place-content: space-between;
+  align-items: center;
+  margin: 1rem 1rem 0;
+}
+.flipcart-clear-btn {
+  background: none;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.flipcart-sorting-filtering {
+  padding: 1.5rem;
+}
+
+.flipcart-filter-name {
+  font-weight: bold;
+  padding: 0.5rem 0;
+}
+.flipcart-filter-sorting-categories label {
+  cursor: pointer;
+}
+@media only screen and (max-width: 800px) {
+  .flipcart-aside-filter {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100px;
+    z-index: 1;
+    opacity: 0.9;
+  }
+  .flipcart-aside-mobile-filter {
+    min-width: 250px;
+    background-color: var(--color-blue-lighter1);
+    display: inline;
+    position: absolute;
+    left: 0;
+    top: 190px;
+    z-index: 1;
+    opacity: 0.9;
+  }
+}

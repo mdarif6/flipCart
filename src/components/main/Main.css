@@ -1,0 +1,27 @@
+.flipcart-main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.filpcart-products-listing {
+  background-color: var(--color-white);
+  padding: 1rem;
+}
+.flipcart-product-heading {
+  padding-bottom: 1rem;
+}
+.flipcart-product-heading span {
+  font-weight: bold;
+}
+
+.burger-menu {
+  display: none;
+  font-size: 2rem;
+  padding: 0.5rem 0 0.5rem 0.5rem;
+  cursor: pointer;
+}
+@media only screen and (max-width: 800px) {
+  .burger-menu {
+    display: inline;
+  }
+}
