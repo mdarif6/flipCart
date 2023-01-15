@@ -10,9 +10,7 @@ export default function AsideMobile() {
   const getCategories = (data) => {
     let categoryArray = data.map((item) => item.category);
     return categoryArray.filter((item, index, arr) => {
-      if (arr.indexOf(item) === index) {
-        return item;
-      }
+      return arr.indexOf(item) === index;
     });
   };
   let uniqueCategoriesArray = getCategories(state.productsData);
@@ -20,9 +18,7 @@ export default function AsideMobile() {
   const getBrandNames = (data) => {
     let brandNameArray = data.map((item) => item.companyName);
     return brandNameArray.filter((item, index, arr) => {
-      if (arr.indexOf(item) === index) {
-        return item;
-      }
+      return arr.indexOf(item) === index;
     });
   };
 
@@ -31,9 +27,7 @@ export default function AsideMobile() {
   const getSizeArray = (data) => {
     let sizeArray = data.map((item) => item.size);
     return sizeArray.filter((item, index, arr) => {
-      if (arr.indexOf(item) === index) {
-        return item;
-      }
+      return arr.indexOf(item) === index;
     });
   };
 
@@ -42,7 +36,7 @@ export default function AsideMobile() {
     dispatch({ type: "SET_CATEGORIES", payload: uniqueCategoriesArray });
     dispatch({ type: "SET_BRANDS", payload: uniqueBrandArray });
     dispatch({ type: "SET_SIZES", payload: uniqueSizeArray });
-  }, []);
+  }, [dispatch]);
 
   const categorySelectAndUnselect = (e, category) => {
     if (e.target.checked) {
@@ -74,8 +68,7 @@ export default function AsideMobile() {
         <button
           className="flipcart-clear-btn"
           onClick={() => {
-            // dispatch({ type: "SORTINGBYPRICE", payload: "" });
-            // dispatch({ type: "SELECT_CATEGORY", payload: "" });
+            dispatch({ type: "CLEAR_ALL" });
           }}
         >
           CLEAR ALL

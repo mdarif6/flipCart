@@ -11,9 +11,7 @@ export default function Aside() {
   const getCategories = (data) => {
     let categoryArray = data.map((item) => item.category);
     return categoryArray.filter((item, index, arr) => {
-      if (arr.indexOf(item) === index) {
-        return item;
-      }
+      return arr.indexOf(item) === index;
     });
   };
   let uniqueCategoriesArray = getCategories(state.productsData);
@@ -21,9 +19,7 @@ export default function Aside() {
   const getBrandNames = (data) => {
     let brandNameArray = data.map((item) => item.companyName);
     return brandNameArray.filter((item, index, arr) => {
-      if (arr.indexOf(item) === index) {
-        return item;
-      }
+      return arr.indexOf(item) === index;
     });
   };
 
@@ -32,9 +28,7 @@ export default function Aside() {
   const getSizeArray = (data) => {
     let sizeArray = data.map((item) => item.size);
     return sizeArray.filter((item, index, arr) => {
-      if (arr.indexOf(item) === index) {
-        return item;
-      }
+      return arr.indexOf(item) === index;
     });
   };
 
@@ -75,8 +69,7 @@ export default function Aside() {
         <button
           className="flipcart-clear-btn"
           onClick={() => {
-            // dispatch({ type: "SORTINGBYPRICE", payload: "" });
-            // dispatch({ type: "SELECT_CATEGORY", payload: "" });
+            dispatch({ type: "CLEAR_ALL" });
           }}
         >
           CLEAR ALL

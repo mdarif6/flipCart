@@ -11,11 +11,7 @@ export const sortedByLowAndHighPrice = (items, sortingname) => {
 export const filteredByCategory = (items, categoryname) => {
   if (categoryname.length !== 0) {
     return items.filter((item) => {
-      if (categoryname.indexOf(item.category) !== -1) {
-        return true;
-      } else {
-        return false;
-      }
+      return categoryname.indexOf(item.category) !== -1;
     });
   } else {
     return items;
@@ -25,11 +21,7 @@ export const filteredByCategory = (items, categoryname) => {
 export const filteredBySize = (items, sizename) => {
   if (sizename.length !== 0) {
     return items.filter((item) => {
-      if (sizename.indexOf(item.size) !== -1) {
-        return true;
-      } else {
-        return false;
-      }
+      return sizename.indexOf(item.size) !== -1;
     });
   } else {
     return items;
@@ -39,11 +31,7 @@ export const filteredBySize = (items, sizename) => {
 export const filteredByBrandName = (items, brandname) => {
   if (brandname.length !== 0) {
     return items.filter((item) => {
-      if (brandname.indexOf(item.companyName) !== -1) {
-        return true;
-      } else {
-        return false;
-      }
+      return brandname.indexOf(item.companyName) !== -1;
     });
   } else {
     return items;

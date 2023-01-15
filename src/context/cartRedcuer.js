@@ -1,3 +1,5 @@
+import productsData from "../products.json";
+
 export default function cartReducer(state, action) {
   switch (action.type) {
     case "SORTINGBYPRICE":
@@ -47,7 +49,15 @@ export default function cartReducer(state, action) {
       const removeSizeIndex = filterBySizeCopy.indexOf(action.payload);
       filterBySizeCopy.splice(removeSizeIndex, 1);
       return { ...state, filterBySize: filterBySizeCopy };
-
+    case "CLEAR_ALL":
+      return {
+        ...state,
+        productsData,
+        sortByPrice: "",
+        filterByBrandName: [],
+        filterByCategories: [],
+        filterBySize: [],
+      };
     default:
       return state;
   }

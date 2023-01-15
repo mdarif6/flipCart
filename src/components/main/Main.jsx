@@ -9,7 +9,7 @@ import {
   sortedByLowAndHighPrice,
 } from "../../context/utility";
 export default function Main({ setShowSideBar }) {
-  const { state, dispatch } = useCart();
+  const { state } = useCart();
   const filteringByPrice = sortedByLowAndHighPrice(
     state.productsData,
     state.sortByPrice
