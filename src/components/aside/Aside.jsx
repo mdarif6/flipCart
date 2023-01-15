@@ -37,7 +37,7 @@ export default function Aside() {
     dispatch({ type: "SET_CATEGORIES", payload: uniqueCategoriesArray });
     dispatch({ type: "SET_BRANDS", payload: uniqueBrandArray });
     dispatch({ type: "SET_SIZES", payload: uniqueSizeArray });
-  }, []);
+  }, [dispatch, uniqueCategoriesArray, uniqueBrandArray, uniqueSizeArray]);
 
   const categorySelectAndUnselect = (e, category) => {
     if (e.target.checked) {
