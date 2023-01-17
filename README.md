@@ -5,17 +5,21 @@
 ## How to run the app locally
 
 ```
-$ git clone https://github.com/mdarif6/manufac-takehome-assignment.git
-$ cd manufac-takehome-assignment
-$ yarn install
-$ yarn start
+$ git clone https://github.com/mdarif6/flipCart.git
+$ cd flipCart
+$ npm install
+$ npm start
 ```
 
 ## Features
 
-- There is Product Listing Page.
-  - Sorting : We can sort by Low to High or High to Low based on price.
-- Filtering:Filtering
+- There is a Product Listing Page having below functionality.
+- Sorting : We can sort by Low to High or High to Low based on price.
+- Filtering: Filtering can be done-
+  - By Category Filter
+  - By Size Filter
+  - By Brands Filter
+- Can reset all filter
 
 ## Tech Stack and Tools
 
@@ -25,10 +29,13 @@ $ yarn start
 # Screenshots
 
 Desktop View
-![Echart Desktopview Screenshot](/src/assets/images/CaptchaPage.JPG)
+![FlipCart Desktopview Screenshot](/src/assets/images/FlipCartDesktopView.JPG)
 
-<!-- Responsive view
+Responsive view 1
 
-![Echart Responsiveview Screenshot](/src/assets/images/responsiveview.JPG) -->
+![Echart Responsiveview Screenshot](/src/assets/images/FlipCartMobileViewWithOutSideBar.JPG)
+
+Responsive view 2
+![Echart Responsiveview Screenshot](/src/assets/images/FlipCartMobileViewWithSideBar.JPG)
 
 - [@ MdArif](https://github.com/mdarif6/)

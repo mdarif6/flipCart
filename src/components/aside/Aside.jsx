@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import { useCart } from "../../context/cart-context";
 import FilterBrands from "../filterbrands/FilterBrands";
 import FilterCategories from "../filtercategories/FilterCategories";
@@ -8,36 +8,36 @@ import "./Aside.css";
 export default function Aside() {
   const { state, dispatch } = useCart();
 
-  const getCategories = (data) => {
+  const getCategories = useCallback((data) => {
     let categoryArray = data.map((item) => item.category);
     return categoryArray.filter((item, index, arr) => {
       return arr.indexOf(item) === index;
     });
-  };
+  }, []);
   let uniqueCategoriesArray = getCategories(state.productsData);
 
-  const getBrandNames = (data) => {
+  const getBrandNames = useCallback((data) => {
     let brandNameArray = data.map((item) => item.companyName);
     return brandNameArray.filter((item, index, arr) => {
       return arr.indexOf(item) === index;
     });
-  };
+  }, []);
 
   let uniqueBrandArray = getBrandNames(state.productsData);
 
-  const getSizeArray = (data) => {
+  const getSizeArray = useCallback((data) => {
     let sizeArray = data.map((item) => item.size);
     return sizeArray.filter((item, index, arr) => {
       return arr.indexOf(item) === index;
     });
-  };
+  }, []);
 
   let uniqueSizeArray = getSizeArray(state.productsData);
   useEffect(() => {
     dispatch({ type: "SET_CATEGORIES", payload: uniqueCategoriesArray });
     dispatch({ type: "SET_BRANDS", payload: uniqueBrandArray });
     dispatch({ type: "SET_SIZES", payload: uniqueSizeArray });
-  }, [dispatch, uniqueCategoriesArray, uniqueBrandArray, uniqueSizeArray]);
+  }, [dispatch]);
 
   const categorySelectAndUnselect = (e, category) => {
     if (e.target.checked) {
