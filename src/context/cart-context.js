@@ -10,6 +10,7 @@ const initialData = {
   brands: [],
   sizes: [],
   filterBySize: [],
+  filterBySearch: "",
 };
 const CartContext = createContext();
 const CartProvider = ({ children }) => {

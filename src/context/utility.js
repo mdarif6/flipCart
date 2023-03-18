@@ -37,3 +37,14 @@ export const filteredByBrandName = (items, brandname) => {
     return items;
   }
 };
+
+export const filterdBySearch = (items, search) => {
+  if (search.length !== 0) {
+    return items.filter((item) => {
+      console.log(item.design, "lowerwala");
+      return item.design.toLowerCase().includes(search.toLowerCase());
+    });
+  } else {
+    return items;
+  }
+};

@@ -3,6 +3,7 @@ import "./Main.css";
 import ProductCard from "../productcard/ProductCard";
 import { useCart } from "../../context/cart-context";
 import {
+  filterdBySearch,
   filteredByBrandName,
   filteredByCategory,
   filteredBySize,
@@ -30,6 +31,11 @@ export default function Main({ setShowSideBar }) {
     state.filterBySize
   );
 
+  const filteringBySearch = filterdBySearch(
+    filteringBySize,
+    state.filterBySearch
+  );
+
   function showHideHandle() {
     setShowSideBar((previous) => !previous);
   }
@@ -41,10 +47,10 @@ export default function Main({ setShowSideBar }) {
         <div className="filpcart-products-listing">
           <div className="flipcart-product-heading">
             <span>Clothing And Accessories </span>
-            <small>(Showing {filteringBySize.length} products)</small>
+            <small>(Showing {filteringBySearch.length} products)</small>
           </div>
           <div className="flipcart-main">
-            {filteringBySize.map((item) => {
+            {filteringBySearch.map((item) => {
               return (
                 <div>
                   <ProductCard key={item.id} item={item} />

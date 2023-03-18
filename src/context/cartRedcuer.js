@@ -57,7 +57,11 @@ export default function cartReducer(state, action) {
         filterByBrandName: [],
         filterByCategories: [],
         filterBySize: [],
+        filterBySearch: "",
       };
+    case "SEARCH":
+      console.log(action.payload);
+      return { ...state, filterBySearch: action.payload };
     default:
       return state;
   }
